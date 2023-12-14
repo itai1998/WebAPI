@@ -70,6 +70,8 @@ namespace WebAPI.Controllers
             existingCourse.COURSE_SECTION = updatedCourse.COURSE_SECTION;
             existingCourse.COURSE_DESC = updatedCourse.COURSE_DESC;
             existingCourse.COURSE_NAME = updatedCourse.COURSE_NAME;
+            existingCourse.SEMESTER = updatedCourse.SEMESTER;
+
 
             courseRepository.Update(existingCourse);
 

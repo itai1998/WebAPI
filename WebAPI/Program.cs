@@ -14,6 +14,7 @@ namespace WebAPI
             ICourseRepository courseRepository = new CourseRepository(nhHelper.OpenSession());
             ICourseProfessorRepository courseProfessorRepository = new CourseProfessorRepository(nhHelper.OpenSession());
             IEnrollmentRepository enrollmentRepository = new EnrollmentRepository(nhHelper.OpenSession());
+            IStudentCoursesRepository studentCoursesRepository = new StudentCoursesRepository(nhHelper.OpenSession());
 
             var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,7 @@ namespace WebAPI
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
             builder.Services.AddScoped<ICourseProfessorRepository, CourseProfessorRepository>();
+            builder.Services.AddScoped<IStudentCoursesRepository, StudentCoursesRepository>();
 
             builder.Services.AddControllers();
             

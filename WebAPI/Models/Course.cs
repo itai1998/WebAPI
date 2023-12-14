@@ -21,5 +21,8 @@ namespace WebAPI.Models
 
         [JsonPropertyName("CREDITS")]
         public virtual int CREDITS { get; set; }
+
+        [JsonPropertyName("SEMESTER")]
+        public virtual int SEMESTER { get; set; }
     }
 }

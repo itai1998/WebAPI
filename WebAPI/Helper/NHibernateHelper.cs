@@ -18,14 +18,14 @@ namespace WebAPI.Helper
 
         private void CreateSessionFactory()
         {
-            string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=university;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=NHibernateDemoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             _sessionFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(connectionString).ShowSql)
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Student>())
                 .ExposeConfiguration(cfg => new SchemaExport(cfg).Create(false, false))
-                .BuildSessionFactory();
-        }
+                .BuildSessionFactory();  
+        } 
 
         public NHibernate.ISession OpenSession()
         {
